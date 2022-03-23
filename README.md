@@ -329,6 +329,12 @@ The returned <code>Genre</code> and <code>People</code> lists must be returned i
 
 ### Hidden Movies
 Each movie in the <code>movies.movie</code> table has a <code>hidden</code> field. This field signifies if the movie is to be hidden away from users that do not have the <code>Admin</code> or <code>Employee</code> Role. If a user without either of these roles calls this endpoint, then all hidden movies must not be included in the results.
+  
+### Person VS Director
+- Our database schema has a `movie_person` table that has the list of `person` in a `movie` **NOTE** that this list does **NOT** contain the director, the director is only assoicated with a movie by the `director_id` column. Every movie is guaranteed to have a director **BUT** not every movie has `person` assoicated with them.
+- There are movies that do not have any rows for `movie_person` so attempting to `JOIN` the table will remove the movie from your results. Be sure to use `LEFT JOIN` to account for this.
+- For the endpoints [GET: Movie Search By Person Id](#movie-search-by-person-id) and [GET: Person Search](#person-search) do not account for director values, search only for `persons` in `movie_person`. This should prevent the SQL Queries from becoming too complex.
+
 
 ### Path
 
@@ -680,7 +686,10 @@ Since there can be *ties* in the movie list when giving a <code>ORDER BY</code> 
 
 ### Hidden Movies
 Each movie in the <code>movies.movie</code> table has a <code>hidden</code> field. This field signifies if the movie is to be hidden away from users that do not have the <code>Admin</code> or <code>Employee</code> Role. If a user without either of these roles calls this endpoint, then all hidden movies must not be included in the results.
- 
+
+## Ignore Director
+Do not account for director values, search only for `persons` in `movie_person`. This should prevent the SQL Queries from becoming too complex.
+  
 ### Path
 
 ```http 
@@ -986,6 +995,10 @@ Since there can be *ties* in the person list when giving a <code>ORDER BY</code>
 
 ### String Search Parameters
 For the following string search parameters (<code>name</code>, <code>movieTitle</code>), you should use the <code>LIKE</code> operator with the <code>%</code> wildcard on both sides of the value. For example, if a value of 'knight' was given as the <code>movieTitle</code> search parameter, then the sql command should look like this: <code>title LIKE '%knight%'</code>
+  
+## Ignore Director
+Do not account for director values, search only for `persons` in `movie_person`. This should prevent the SQL Queries from becoming too complex.
+
 
 ### Path
 
