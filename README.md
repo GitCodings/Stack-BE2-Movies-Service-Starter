@@ -167,13 +167,13 @@ logging:
     <tr></tr>
     <tr>
       <td>budget</td>
-      <td><code>INT</code></td>
+      <td><code>BIGINT</code></td>
       <td><code>NULL</code></td>
     </tr>
     <tr></tr>
     <tr>
       <td>revenue</td>
-      <td><code>INT</code></td>
+      <td><code>BIGINT</code></td>
       <td><code>NULL</code></td>
     </tr>
     <tr></tr>
