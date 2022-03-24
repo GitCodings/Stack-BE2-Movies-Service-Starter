@@ -329,7 +329,7 @@ These can be used rather than creating your own.
 ## Movie Get By Movie Id
 Returns a movie with detailed information for the given <code>movieId</code>. 
 
-### Result Sorting
+### Sorting
 The returned <code>genres</code> lists must be returned in **Alphabetical** order of its **name**. \
 The returned <code>persons</code> lists must be returned in **Descending Popularity** primary order, then **Ascending Person ID** secondary order.
 
@@ -478,7 +478,7 @@ persons: Person[]
 ## Movie Search
 Returns a list of movies with basic information that match the given search parameters.
 
-### Result Sorting
+### Sorting
 Since there can be *ties* in the movie list when giving a <code>ORDER BY</code> parameter we must specify a **Secondary** sorting parameter: This sorting parameter will always be <code>movie.id ASC</code> regardless of the **Primary** parameter. For example if we wanted to do sort the movies by their titles we would have the SQL Clause <code>ORDER BY movie.title, movie.id</code>, note that ASC is the default direction and thus is optional to add.
 
 ### Hidden Movies
@@ -681,7 +681,7 @@ movies: Movie[]
 ## Movie Search By Person Id
 Returns a list of movies with basic information that contain the given <code>personId</code> as a person in the movie.
 
-### Result Sorting
+### Sorting
 Since there can be *ties* in the movie list when giving a <code>ORDER BY</code> parameter we must specify a **Secondary** sorting parameter: This sorting parameter will always be <code>movie.id ASC</code> regardless of the **Primary** parameter. For example if we wanted to do sort the movies by their titles we would have the SQL Clause <code>ORDER BY movie.title, movie.id</code>, note that ASC is the default direction and thus is optional to add.
 
 ### Hidden Movies
@@ -990,7 +990,7 @@ person: PersonDetail
 ## Person Search
 Returns a list of people with basic information that match the given search parameters.
 
-### Result Sorting
+### Sorting
 Since there can be *ties* in the person list when giving a <code>ORDER BY</code> parameter we must specify a **Secondary** sorting parameter: This sorting parameter will always be <code>person.id ASC</code> regardless of the **Primary** parameter. For example if we wanted to do sort the persons by their names we would have the SQL Clause <code>ORDER BY person.name, person.id</code>, note that ASC is the default direction and thus is optional to add.
 
 ### String Search Parameters
