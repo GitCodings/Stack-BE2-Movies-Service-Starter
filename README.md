@@ -687,7 +687,7 @@ Since there can be *ties* in the movie list when giving a <code>ORDER BY</code> 
 ### Hidden Movies
 Each movie in the <code>movies.movie</code> table has a <code>hidden</code> field. This field signifies if the movie is to be hidden away from users that do not have the <code>Admin</code> or <code>Employee</code> Role. If a user without either of these roles calls this endpoint, then all hidden movies must not be included in the results.
 
-## Ignore Director
+### Ignore Director
 Do not account for director values, search only for `persons` in `movie_person`. This should prevent the SQL Queries from becoming too complex.
   
 ### Path
