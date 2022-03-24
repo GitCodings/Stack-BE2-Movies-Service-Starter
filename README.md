@@ -318,22 +318,23 @@ This is done by insuring that all <code>null</code> values are dropped by either
 - Putting the <code>@JsonInclude(JsonInclude.Include.NON_NULL)</code> on your Model class
   
 ### Result
-All <code>Result</code> objects are avaible as static constants inside of the <code>com.github.klefstad_teaching.cs122b.core.result.MoviesResults</code> class.
+All <code>Result</code> objects are available as static constants inside the <code>com.github.klefstad_teaching.cs122b.core.result.MoviesResults</code> class.
 These can be used rather than creating your own.
+
+### Person VS Director
+- Our database schema has a `movie_person` table that has the list of `person` in a `movie` **NOTE** that this list does **NOT** contain the director, the director is only associated with a movie by the `director_id` column. Every movie is guaranteed to have a director **BUT** not every movie has `person` associated with them.
+- There are movies that do not have any rows for `movie_person` so attempting to `JOIN` the table will remove the movie from your results. Be sure to use `LEFT JOIN` to account for this.
+- For the endpoint [GET: Movie Search By Person Id](#movie-search-by-person-id) do not account for director values, search only for `persons` in `movie_person`. This should prevent the SQL Queries from becoming too complex.
 
 ## Movie Get By Movie Id
 Returns a movie with detailed information for the given <code>movieId</code>. 
 
 ### Result Sorting
-The returned <code>Genre</code> and <code>People</code> lists must be returned in **Alphabetical** order of their **name**. 
+The returned <code>genres</code> lists must be returned in **Alphabetical** order of its **name**. \
+The returned <code>persons</code> lists must be returned in **Descending Popularity** primary order, then **Ascending Person ID** secondary order.
 
 ### Hidden Movies
 Each movie in the <code>movies.movie</code> table has a <code>hidden</code> field. This field signifies if the movie is to be hidden away from users that do not have the <code>Admin</code> or <code>Employee</code> Role. If a user without either of these roles calls this endpoint, then all hidden movies must not be included in the results.
-  
-### Person VS Director
-- Our database schema has a `movie_person` table that has the list of `person` in a `movie` **NOTE** that this list does **NOT** contain the director, the director is only associated with a movie by the `director_id` column. Every movie is guaranteed to have a director **BUT** not every movie has `person` associated with them.
-- There are movies that do not have any rows for `movie_person` so attempting to `JOIN` the table will remove the movie from your results. Be sure to use `LEFT JOIN` to account for this.
-- For the endpoint [GET: Movie Search By Person Id](#movie-search-by-person-id) do not account for director values, search only for `persons` in `movie_person`. This should prevent the SQL Queries from becoming too complex.
 
 ### Path
 
