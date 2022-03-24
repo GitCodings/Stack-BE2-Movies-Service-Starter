@@ -561,7 +561,7 @@ GET /movie/search
     <tr>
       <td>page</td>
       <td><code>Integer</code></td>
-      <td>The page for pagination: <code>1</code> (default) or any positive number over 0</td>
+      <td>The page for pagination: <code>1</code> (default) or any positive number over <code>0</code></td>
     </tr>
     <tr></tr>
     <tr>
@@ -756,7 +756,7 @@ GET /movie/search/person/{personId}
     <tr>
       <td>page</td>
       <td><code>Integer</code></td>
-      <td>The page for pagination: <code>1</code> (default) or any positive number over 0</td>
+      <td>The page for pagination: <code>1</code> (default) or any positive number over <code>0</code></td>
     </tr>
     <tr></tr>
     <tr>
@@ -1064,7 +1064,7 @@ GET /person/search
     <tr>
       <td>page</td>
       <td><code>Integer</code></td>
-      <td>The page for pagination: <code>1</code> (default) or any positive number over 0</td>
+      <td>The page for pagination: <code>1</code> (default) or any positive number over <code>0</code></td>
     </tr>
     <tr></tr>
     <tr>
