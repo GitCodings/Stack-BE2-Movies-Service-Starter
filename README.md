@@ -106,7 +106,7 @@ logging:
     <tr></tr>
     <tr>
       <td>popularity</td>
-      <td><code>FLOAT</code></td>
+      <td><code>DECIMAL</code></td>
       <td><code>NULL</code></td>
     </tr>
     <tr></tr>
@@ -155,7 +155,7 @@ logging:
     <tr></tr>
     <tr>
       <td>rating</td>
-      <td><code>FLOAT</code></td>
+      <td><code>DECIMAL</code></td>
       <td><code>NOT NULL</code> <code>DEFAULT 0.0</code></td>
     </tr>
     <tr></tr>
