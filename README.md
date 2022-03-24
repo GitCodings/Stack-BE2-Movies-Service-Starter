@@ -20,7 +20,7 @@ spring:
   application:
     name: MoviesService
   datasource:
-    url: jdbc:mysql://localhost:3306/movies
+    url: jdbc:mysql://localhost:3306
     username: ${DB_USERNAME}
     password: ${DB_PASSWORD}
 
