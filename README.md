@@ -1,6 +1,6 @@
 # CS122B Backend 2 - The Movies Service
 
-#### [Config](#config)
+#### [Application Settings](#application-settings)
 
 #### [Database](#database)
 
@@ -12,7 +12,10 @@
 4. [GET: Person Get By Person Id](#person-get-by-person-id)
 5. [GET: Person Search](#person-search)
 
-## Config
+## Application Settings
+
+This file is already provided for you and configure Spring Boot's settings
+
 ##### `application.yml`
 
 ```yml
