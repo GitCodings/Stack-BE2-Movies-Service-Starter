@@ -148,36 +148,6 @@ public class MoviesServiceTest
     {
     }
 
-    // Movie By ID Tests
-
-    @Test
-    public void movieById()
-        throws Exception
-    {
-        this.mockMvc.perform(get(MOVIE_BY_ID_PATH, AVENGERS_ENDGAME_ID)
-                                 .contentType(MediaType.APPLICATION_JSON)
-                                 .header(HttpHeaders.AUTHORIZATION, adminHeader))
-                    .andDo(print())
-                    .andExpectAll(isResult(MoviesResults.MOVIE_WITH_ID_FOUND))
-                    .andExpect(jsonPath("movie").value(getModel("movieById.movie")))
-                    .andExpect(jsonPath("genres").value(getModel("movieById.genres")))
-                    .andExpect(jsonPath("persons").value(getModel("movieById.persons")));
-    }
-
-    @Test
-    public void movieByIdNoneFound()
-        throws Exception
-    {
-        this.mockMvc.perform(get(MOVIE_BY_ID_PATH, NOT_A_REAL_MOVIE_ID)
-                                 .contentType(MediaType.APPLICATION_JSON)
-                                 .header(HttpHeaders.AUTHORIZATION, adminHeader))
-                    .andDo(print())
-                    .andExpectAll(isResult(MoviesResults.NO_MOVIE_WITH_ID_FOUND))
-                    .andExpect(jsonPath("movie").doesNotHaveJsonPath())
-                    .andExpect(jsonPath("genres").doesNotHaveJsonPath())
-                    .andExpect(jsonPath("persons").doesNotHaveJsonPath());
-    }
-
     // Movie Search Tests
 
     @Test
@@ -484,30 +454,34 @@ public class MoviesServiceTest
                     .andExpect(jsonPath("movies").doesNotHaveJsonPath());
     }
 
-    // Person By ID Tests
+    // Movie By ID Tests
 
     @Test
-    public void personById()
+    public void movieById()
         throws Exception
     {
-        this.mockMvc.perform(get(PERSON_BY_ID_PATH, ROBERT_DOWNEY_JR_ID)
+        this.mockMvc.perform(get(MOVIE_BY_ID_PATH, AVENGERS_ENDGAME_ID)
                                  .contentType(MediaType.APPLICATION_JSON)
                                  .header(HttpHeaders.AUTHORIZATION, adminHeader))
                     .andDo(print())
-                    .andExpectAll(isResult(MoviesResults.PERSON_WITH_ID_FOUND))
-                    .andExpect(jsonPath("person").value(getModel("personById")));
+                    .andExpectAll(isResult(MoviesResults.MOVIE_WITH_ID_FOUND))
+                    .andExpect(jsonPath("movie").value(getModel("movieById.movie")))
+                    .andExpect(jsonPath("genres").value(getModel("movieById.genres")))
+                    .andExpect(jsonPath("persons").value(getModel("movieById.persons")));
     }
 
     @Test
-    public void personByIdNoneFound()
+    public void movieByIdNoneFound()
         throws Exception
     {
-        this.mockMvc.perform(get(PERSON_BY_ID_PATH, NOT_A_REAL_PERSON_ID)
+        this.mockMvc.perform(get(MOVIE_BY_ID_PATH, NOT_A_REAL_MOVIE_ID)
                                  .contentType(MediaType.APPLICATION_JSON)
                                  .header(HttpHeaders.AUTHORIZATION, adminHeader))
                     .andDo(print())
-                    .andExpectAll(isResult(MoviesResults.NO_PERSON_WITH_ID_FOUND))
-                    .andExpect(jsonPath("person").doesNotHaveJsonPath());
+                    .andExpectAll(isResult(MoviesResults.NO_MOVIE_WITH_ID_FOUND))
+                    .andExpect(jsonPath("movie").doesNotHaveJsonPath())
+                    .andExpect(jsonPath("genres").doesNotHaveJsonPath())
+                    .andExpect(jsonPath("persons").doesNotHaveJsonPath());
     }
 
     // Person Search Tests
@@ -670,5 +644,31 @@ public class MoviesServiceTest
                     .andDo(print())
                     .andExpectAll(isResult(MoviesResults.NO_PERSONS_FOUND_WITHIN_SEARCH))
                     .andExpect(jsonPath("persons").doesNotHaveJsonPath());
+    }
+
+    // Person By ID Tests
+
+    @Test
+    public void personById()
+        throws Exception
+    {
+        this.mockMvc.perform(get(PERSON_BY_ID_PATH, ROBERT_DOWNEY_JR_ID)
+                                 .contentType(MediaType.APPLICATION_JSON)
+                                 .header(HttpHeaders.AUTHORIZATION, adminHeader))
+                    .andDo(print())
+                    .andExpectAll(isResult(MoviesResults.PERSON_WITH_ID_FOUND))
+                    .andExpect(jsonPath("person").value(getModel("personById")));
+    }
+
+    @Test
+    public void personByIdNoneFound()
+        throws Exception
+    {
+        this.mockMvc.perform(get(PERSON_BY_ID_PATH, NOT_A_REAL_PERSON_ID)
+                                 .contentType(MediaType.APPLICATION_JSON)
+                                 .header(HttpHeaders.AUTHORIZATION, adminHeader))
+                    .andDo(print())
+                    .andExpectAll(isResult(MoviesResults.NO_PERSON_WITH_ID_FOUND))
+                    .andExpect(jsonPath("person").doesNotHaveJsonPath());
     }
 }

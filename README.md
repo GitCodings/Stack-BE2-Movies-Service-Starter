@@ -6,11 +6,11 @@
 
 #### [Endpoints](#endpoints)
 
-1. [GET: Movie Get By Movie Id](#movie-get-by-movie-id)
-2. [GET: Movie Search](#movie-search)
-3. [GET: Movie Search By Person Id](#movie-search-by-person-id)
-4. [GET: Person Get By Person Id](#person-get-by-person-id)
-5. [GET: Person Search](#person-search)
+1. [GET: Movie Search](#movie-search)
+2. [GET: Movie Search By Person Id](#movie-search-by-person-id)
+3. [GET: Movie Get By Movie Id](#movie-get-by-movie-id)
+4. [GET: Person Search](#person-search)
+5. [GET: Person Get By Person Id](#person-get-by-person-id)
 
 ## Application Settings
 
@@ -329,155 +329,6 @@ These can be used rather than creating your own.
 - Our database schema has a `movie_person` table that has the list of `person` in a `movie` **NOTE** that this list does **NOT** contain the director, the director is only associated with a movie by the `director_id` column. Every movie is guaranteed to have a director **BUT** not every movie has `person` associated with them.
 - There are movies that do not have any rows for `movie_person` so attempting to `JOIN` the table will remove the movie from your results. Be sure to use `LEFT JOIN` to account for this.
 - For the endpoint [GET: Movie Search By Person Id](#movie-search-by-person-id) do not account for director values, search only for `persons` in `movie_person`. This should prevent the SQL Queries from becoming too complex.
-
-## Movie Get By Movie Id
-Returns a movie with detailed information for the given <code>movieId</code>. 
-
-### Sorting
-The returned <code>genres</code> lists must be returned in **Alphabetical** order of its **name**. \
-The returned <code>persons</code> lists must be returned in **Descending Popularity** primary order, then **Ascending Person ID** secondary order.
-
-### Hidden Movies
-Each movie in the <code>movies.movie</code> table has a <code>hidden</code> field. This field signifies if the movie is to be hidden away from users that do not have the <code>Admin</code> or <code>Employee</code> Role. If a user without either of these roles calls this endpoint, then all hidden movies must not be included in the results.
-
-### Path
-
-```http 
-GET /movie/{movieId}
-```
-
-### API
-
-<table>
-  <tbody>
-    <tr>
-      <th colspan="3" align="left" width="1100">📨&nbsp;&nbsp;Headers</th>
-    </tr>
-    <tr></tr>
-    <tr>
-      <th align="left">Header</th>
-      <th align="left">Type</th>
-      <th align="left">Description</th>
-    </tr>
-    <tr>
-      <td>Authorization</td>
-      <td><code>String</code></td>
-      <td>User's bearer token</td>
-    </tr>
-    <tr></tr>
-    <tr>
-      <td>Transaction-ID</td>
-      <td><code>String</code></td>
-      <td>Request's transaction id from the gateway service</td>
-    </tr>
-    <tr><td colspan="3" ></td></tr>
-    <tr></tr>
-    <tr>
-      <th colspan="3" align="left">🔖&nbsp;&nbsp;Path</th>
-    </tr>
-    <tr></tr>
-    <tr>
-      <th align="left">Parameter</th>
-      <th align="left">Type</th>
-      <th align="left">Description</th>
-    </tr>
-    <tr>
-      <td>movieId</td>
-      <td><code>Long</code></td>
-      <td>Movie id of the movie to get</td>
-    </tr>
-    <tr><td colspan="3" ></td></tr>
-    <tr></tr>
-    <tr>
-      <th colspan="3" align="left">📤&nbsp;&nbsp;Response</th>
-    </tr>
-    <tr></tr>
-    <tr>
-      <th colspan="2" align="left">Model </th>
-      <th align="left">Example </th>
-    </tr>
-    <tr>
-      <td colspan="2" align="left"><pre lang="yml">
-result: Result
-    code: Integer
-    message: String
-movies: MovieDetail 
-    id: Long
-    title: String
-    year: String
-    director: String
-    rating: Double
-    numVotes: Long
-    budget: Long
-    revenue: Long
-    overview: String
-    backdropPath: String
-    posterPath: String
-    hidden: Boolean
-genres: Genre[] 
-    genreId: Integer
-    name: String
-persons: Person[] 
-    personId: Integer
-    name: String</pre></td>
-      <td align="left"><pre lang="json">
-{
-    "result": {
-        "code": 2010,
-        "message": "Movie found with the specified ID"
-    },
-    "movie": {
-        "id": 4154796,
-        "title": "Avengers: Endgame",
-        "year": 2019,
-        "director": "Joe Russo",
-        "rating": 8.6,
-        "numVotes": 5269,
-        "budget": 356000000,
-        "revenue": 2485499739,
-        "overview": "After the devastating events of Avengers: Infinity War... ",
-        "backdropPath": "/7RyHsO4yDXtBv1zUU3mTpHeQ0d5.jpg",
-        "posterPath": "/or06FN3Dka5tukK1e9sl16pB3iy.jpg",
-        "hidden": false
-    },
-    "genres": [
-        {
-            "id": 28, 
-            "name": "Action"
-        }
-    ],
-    "persons": [
-        {
-            "id": 3223, 
-            "name": "Robert Downey Jr."
-        }
-    ]
-}</pre></td>
-    </tr>    
-    <tr><td colspan="3" ></td></tr>
-    <tr></tr>
-    <tr>
-      <th colspan="3" align="left">📦&nbsp;&nbsp;Results</th>
-    </tr>
-    <tr></tr>
-    <tr>
-      <th align="left" width="200">Status</th>
-      <th align="left">Code</th>
-      <th align="left">Message</th>
-    </tr>
-    <tr>
-      <td><code>✅ 200: Ok</code></td>
-      <td>2010</td>
-      <td>Movie found with the specified ID</td>
-    </tr>
-    <tr></tr>
-    <tr>
-      <td><code>✅ 200: Ok</code></td>
-      <td>2011</td>
-      <td>No Movie found for the specified ID</td>
-    </tr>
-  </tbody>
-</table>
 
 ## Movie Search
 Returns a list of movies with basic information that match the given search parameters.
@@ -877,13 +728,21 @@ movies: Movie[]
   </tbody>
 </table>
 
-## Person Get by Person Id
-Return detailed information for the Person matching the given <code>personId</code>
+
+## Movie Get By Movie Id
+Returns a movie with detailed information for the given <code>movieId</code>. 
+
+### Sorting
+The returned <code>genres</code> lists must be returned in **Alphabetical** order of its **name**. \
+The returned <code>persons</code> lists must be returned in **Descending Popularity** primary order, then **Ascending Person ID** secondary order.
+
+### Hidden Movies
+Each movie in the <code>movies.movie</code> table has a <code>hidden</code> field. This field signifies if the movie is to be hidden away from users that do not have the <code>Admin</code> or <code>Employee</code> Role. If a user without either of these roles calls this endpoint, then all hidden movies must not be included in the results.
 
 ### Path
 
 ```http 
-GET /person/{personId}
+GET /movie/{movieId}
 ```
 
 ### API
@@ -922,9 +781,9 @@ GET /person/{personId}
       <th align="left">Description</th>
     </tr>
     <tr>
-      <td>personId</td>
+      <td>movieId</td>
       <td><code>Long</code></td>
-      <td>Person id of the person to get</td>
+      <td>Movie id of the movie to get</td>
     </tr>
     <tr><td colspan="3" ></td></tr>
     <tr></tr>
@@ -941,29 +800,57 @@ GET /person/{personId}
 result: Result
     code: Integer
     message: String
-person: PersonDetail
+movies: MovieDetail 
     id: Long
+    title: String
+    year: String
+    director: String
+    rating: Double
+    numVotes: Long
+    budget: Long
+    revenue: Long
+    overview: String
+    backdropPath: String
+    posterPath: String
+    hidden: Boolean
+genres: Genre[] 
+    genreId: Integer
     name: String
-    birthday: String (nullable)
-    biography: String (nullable)
-    birthplace: String (nullable)
-    popularity: Float (nullable)
-    profilePath: String (nullable)</pre></td>
+persons: Person[] 
+    personId: Integer
+    name: String</pre></td>
       <td align="left"><pre lang="json">
 {
     "result": {
-        "code": 2040,
-        "message": "Person found with the specified ID"
+        "code": 2010,
+        "message": "Movie found with the specified ID"
     },
-    "person": {
-        "id": 3223,
-        "name": "Robert Downey Jr.",
-        "birthday": "1965-04-04",
-        "biography": "Robert John Downey Jr. (born April 4, 1965)...",
-        "birthplace": "Manhattan, New York City, New York, USA",
-        "popularity": 18.837,
-        "profilePath": "/r7WLn4Kbnqb6oJ8TmSI0e4LkWTj.jpg"
-    } 
+    "movie": {
+        "id": 4154796,
+        "title": "Avengers: Endgame",
+        "year": 2019,
+        "director": "Joe Russo",
+        "rating": 8.6,
+        "numVotes": 5269,
+        "budget": 356000000,
+        "revenue": 2485499739,
+        "overview": "After the devastating events of Avengers: Infinity War... ",
+        "backdropPath": "/7RyHsO4yDXtBv1zUU3mTpHeQ0d5.jpg",
+        "posterPath": "/or06FN3Dka5tukK1e9sl16pB3iy.jpg",
+        "hidden": false
+    },
+    "genres": [
+        {
+            "id": 28, 
+            "name": "Action"
+        }
+    ],
+    "persons": [
+        {
+            "id": 3223, 
+            "name": "Robert Downey Jr."
+        }
+    ]
 }</pre></td>
     </tr>    
     <tr><td colspan="3" ></td></tr>
@@ -979,14 +866,14 @@ person: PersonDetail
     </tr>
     <tr>
       <td><code>✅ 200: Ok</code></td>
-      <td>2040</td>
-      <td>Person found with the specified ID</td>
+      <td>2010</td>
+      <td>Movie found with the specified ID</td>
     </tr>
     <tr></tr>
     <tr>
       <td><code>✅ 200: Ok</code></td>
-      <td>2041</td>
-      <td>No Person found for the specified ID</td>
+      <td>2011</td>
+      <td>No Movie found for the specified ID</td>
     </tr>
   </tbody>
 </table>
@@ -1178,6 +1065,122 @@ persons: id
       <td><code>❗ 400: Bad Request</code></td>
       <td>2003</td>
       <td>Invalid 'offset' value given</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+## Person Get by Person Id
+Return detailed information for the Person matching the given <code>personId</code>
+
+### Path
+
+```http 
+GET /person/{personId}
+```
+
+### API
+
+<table>
+  <tbody>
+    <tr>
+      <th colspan="3" align="left" width="1100">📨&nbsp;&nbsp;Headers</th>
+    </tr>
+    <tr></tr>
+    <tr>
+      <th align="left">Header</th>
+      <th align="left">Type</th>
+      <th align="left">Description</th>
+    </tr>
+    <tr>
+      <td>Authorization</td>
+      <td><code>String</code></td>
+      <td>User's bearer token</td>
+    </tr>
+    <tr></tr>
+    <tr>
+      <td>Transaction-ID</td>
+      <td><code>String</code></td>
+      <td>Request's transaction id from the gateway service</td>
+    </tr>
+    <tr><td colspan="3" ></td></tr>
+    <tr></tr>
+    <tr>
+      <th colspan="3" align="left">🔖&nbsp;&nbsp;Path</th>
+    </tr>
+    <tr></tr>
+    <tr>
+      <th align="left">Parameter</th>
+      <th align="left">Type</th>
+      <th align="left">Description</th>
+    </tr>
+    <tr>
+      <td>personId</td>
+      <td><code>Long</code></td>
+      <td>Person id of the person to get</td>
+    </tr>
+    <tr><td colspan="3" ></td></tr>
+    <tr></tr>
+    <tr>
+      <th colspan="3" align="left">📤&nbsp;&nbsp;Response</th>
+    </tr>
+    <tr></tr>
+    <tr>
+      <th colspan="2" align="left">Model </th>
+      <th align="left">Example </th>
+    </tr>
+    <tr>
+      <td colspan="2" align="left"><pre lang="yml">
+result: Result
+    code: Integer
+    message: String
+person: PersonDetail
+    id: Long
+    name: String
+    birthday: String (nullable)
+    biography: String (nullable)
+    birthplace: String (nullable)
+    popularity: Float (nullable)
+    profilePath: String (nullable)</pre></td>
+      <td align="left"><pre lang="json">
+{
+    "result": {
+        "code": 2040,
+        "message": "Person found with the specified ID"
+    },
+    "person": {
+        "id": 3223,
+        "name": "Robert Downey Jr.",
+        "birthday": "1965-04-04",
+        "biography": "Robert John Downey Jr. (born April 4, 1965)...",
+        "birthplace": "Manhattan, New York City, New York, USA",
+        "popularity": 18.837,
+        "profilePath": "/r7WLn4Kbnqb6oJ8TmSI0e4LkWTj.jpg"
+    } 
+}</pre></td>
+    </tr>    
+    <tr><td colspan="3" ></td></tr>
+    <tr></tr>
+    <tr>
+      <th colspan="3" align="left">📦&nbsp;&nbsp;Results</th>
+    </tr>
+    <tr></tr>
+    <tr>
+      <th align="left" width="200">Status</th>
+      <th align="left">Code</th>
+      <th align="left">Message</th>
+    </tr>
+    <tr>
+      <td><code>✅ 200: Ok</code></td>
+      <td>2040</td>
+      <td>Person found with the specified ID</td>
+    </tr>
+    <tr></tr>
+    <tr>
+      <td><code>✅ 200: Ok</code></td>
+      <td>2041</td>
+      <td>No Person found for the specified ID</td>
     </tr>
   </tbody>
 </table>
