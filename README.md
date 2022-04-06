@@ -227,13 +227,13 @@ logging:
     <tr>
       <td>movie_id</td>
       <td><code>INT</code></td>
-      <td><code>NOT NULL</code> <code>PRIMARY KEY</code></td>
+      <td><code>NOT NULL</code></td>
     </tr>
     <tr></tr>
     <tr>
       <td>person_id</td>
       <td><code>INT</code></td>
-      <td><code>NOT NULL</code> <code>PRIMARY KEY</code></td>
+      <td><code>NOT NULL</code></td>
     </tr>
     <tr>
       <th colspan="3" align="left">Constraints</th>
@@ -266,13 +266,13 @@ logging:
     <tr>
       <td>movie_id</td>
       <td><code>INT</code></td>
-      <td><code>NOT NULL</code> <code>PRIMARY KEY</code></td>
+      <td><code>NOT NULL</code></td>
     </tr>
     <tr></tr>
     <tr>
       <td>genre_id</td>
       <td><code>INT</code></td>
-      <td><code>NOT NULL</code> <code>PRIMARY KEY</code></td>
+      <td><code>NOT NULL</code></td>
     </tr>
     <tr>
       <th colspan="3" align="left">Constraints</th>
