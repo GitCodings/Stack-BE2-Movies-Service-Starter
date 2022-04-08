@@ -3,6 +3,9 @@
 #### [Application Settings](#application-settings)
 
 #### [Database](#database)
+ - [Schemas](#schemas)
+ - [Tables](#tables)
+ - [Initial Data](#initial-data)
 
 #### [Endpoints](#endpoints)
 
@@ -41,6 +44,18 @@ logging:
 ``` 
 
 ## Database
+
+### Schemas
+
+<table>
+  <thead>
+    <tr>
+      <th align="left" width="1100">🗄 movies</th>
+    </tr>
+  </thead>
+</table>
+
+### Tables
 
 <table>
   <tbody>
@@ -290,6 +305,10 @@ logging:
     </tr>
   </tbody>
 </table>
+
+### Initial Data
+
+All the data to initialize your database is found in the `db` folder here: [db folder](/db). They are numbered in the order they should be executed.
 
 # Endpoints
 
