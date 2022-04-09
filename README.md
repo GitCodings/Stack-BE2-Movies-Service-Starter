@@ -2,17 +2,17 @@
 
 #### [Application Settings](#application-settings)
 
+#### [Database](#database)
+ - [Schemas](#schemas)
+ - [Tables](#tables)
+ - [Initial Data](#initial-data)
+
 #### [Notes](#notes)
  - [Order of Validation](#order-of-validation)
  - [JsonInclude](#jsoninclude)
  - [Result](#result)
  - [Person VS Director](#person-vs-director)
  - [Substring Search](#substring-search)
-
-#### [Database](#database)
- - [Schemas](#schemas)
- - [Tables](#tables)
- - [Initial Data](#initial-data)
 
 #### [Endpoints](#endpoints)
 
