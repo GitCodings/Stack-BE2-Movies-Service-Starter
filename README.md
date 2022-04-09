@@ -2,6 +2,13 @@
 
 #### [Application Settings](#application-settings)
 
+#### [Notes](#notes)
+ - [Order of Validation](#order-of-validation)
+ - [JsonInclude](#jsoninclude)
+ - [Result](#result)
+ - [Person VS Director](#person-vs-director)
+ - [Substring Search](#substring-search)
+
 #### [Database](#database)
  - [Schemas](#schemas)
  - [Tables](#tables)
@@ -310,7 +317,7 @@ logging:
 
 All the data to initialize your database is found in the `db` folder here: [db folder](/db). They are numbered in the order they should be executed.
 
-# Endpoints
+# Notes
 
 ### Order of Validation
 All <code>❗ 400: Bad Request</code> Results must be checked first, and returned before any other action is made. \
@@ -352,6 +359,8 @@ These can be used rather than creating your own.
 ### Substring Search
  
 For queries marked as (Search by [substring](#substring-search)) make sure to have the value surrounded by '%' to allow for search by sub-string. Refer to this section in the activity: [Wildcard String Matching](https://github.com/klefstad-teaching/CS122B-A4-SQL/blob/main/README.md#wildcard-string-matching)
+ 
+# Endpoints
 
 ## Movie Search
 Returns a list of movies with basic information that match the given search parameters.
