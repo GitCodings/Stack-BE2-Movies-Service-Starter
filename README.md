@@ -348,6 +348,10 @@ These can be used rather than creating your own.
 - Our database schema has a `movie_person` table that has the list of `person` in a `movie` **NOTE** that this list does **NOT** contain the director, the director is only associated with a movie by the `director_id` column. Every movie is guaranteed to have a director **BUT** not every movie has `person` associated with them.
 - There are movies that do not have any rows for `movie_person` so attempting to `JOIN` the table will remove the movie from your results. Be sure to use `LEFT JOIN` to account for this.
 - For the endpoint [GET: Movie Search By Person Id](#movie-search-by-person-id) do not account for director values, search only for `persons` in `movie_person`. This should prevent the SQL Queries from becoming too complex.
+ 
+### Substring Search
+ 
+For queries marked as (Search by [substring](#substring-search)) make sure to have the value surrounded by '%' to allow for search by sub-string. Refer to this section in the activity: [Wildcard String Matching](https://github.com/klefstad-teaching/CS122B-A4-SQL/blob/main/README.md#wildcard-string-matching)
 
 ## Movie Search
 Returns a list of movies with basic information that match the given search parameters.
@@ -405,7 +409,7 @@ GET /movie/search
     <tr>
       <td>title</td>
       <td><code>String</code></td>
-      <td>The movie's title</td>
+      <td>The movie's title (Search by [substring](#substring-search))</td>
     </tr>
     <tr></tr>
     <tr>
@@ -417,13 +421,13 @@ GET /movie/search
     <tr>
       <td>director</td>
       <td><code>String</code></td>
-      <td>The movie's director</td>
+      <td>The movie's director (Search by [substring](#substring-search))</td>
     </tr>
     <tr></tr>
     <tr>
       <td>genre</td>
       <td><code>String</code></td>
-      <td>The movie's genre</td>
+      <td>The movie's genre (Search by [substring](#substring-search))</td>
     </tr>
     <tr></tr>
     <tr>
@@ -950,7 +954,7 @@ GET /person/search
     <tr>
       <td>name</td>
       <td><code>String</code></td>
-      <td>Name of the person to search</td>
+      <td>Name of the person to search (Search by [substring](#substring-search))</td>
     </tr>
     <tr></tr>
     <tr>
@@ -962,7 +966,7 @@ GET /person/search
     <tr>
       <td>movieTitle</td>
       <td><code>String</code></td>
-      <td>Movies to search the person in</td>
+      <td>Movies to search the person in (Search by [substring](#substring-search))</td>
     </tr>
     <tr></tr>
     <tr>
