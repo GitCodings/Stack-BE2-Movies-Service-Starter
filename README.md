@@ -409,7 +409,7 @@ GET /movie/search
     <tr>
       <td>title</td>
       <td><code>String</code></td>
-      <td>The movie's title (Search by [substring](#substring-search))</td>
+      <td>The movie's title (Search by <a href="#substring-search">substring</a>)</td>
     </tr>
     <tr></tr>
     <tr>
@@ -421,13 +421,13 @@ GET /movie/search
     <tr>
       <td>director</td>
       <td><code>String</code></td>
-      <td>The movie's director (Search by [substring](#substring-search))</td>
+      <td>The movie's director (Search by <a href="#substring-search">substring</a>)</td>
     </tr>
     <tr></tr>
     <tr>
       <td>genre</td>
       <td><code>String</code></td>
-      <td>The movie's genre (Search by [substring](#substring-search))</td>
+      <td>The movie's genre (Search by <a href="#substring-search">substring</a>)</td>
     </tr>
     <tr></tr>
     <tr>
@@ -954,7 +954,7 @@ GET /person/search
     <tr>
       <td>name</td>
       <td><code>String</code></td>
-      <td>Name of the person to search (Search by [substring](#substring-search))</td>
+      <td>Name of the person to search (Search by <a href="#substring-search">substring</a>)</td>
     </tr>
     <tr></tr>
     <tr>
@@ -966,7 +966,7 @@ GET /person/search
     <tr>
       <td>movieTitle</td>
       <td><code>String</code></td>
-      <td>Movies to search the person in (Search by [substring](#substring-search))</td>
+      <td>Movies to search the person in (Search by <a href="#substring-search">substring</a>)</td>
     </tr>
     <tr></tr>
     <tr>
