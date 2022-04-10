@@ -1,6 +1,9 @@
 # CS122B Backend 2 - The Movies Service
 
-#### [Application Settings](#application-settings)
+#### [Application](#application)
+ - [application.yml](#applicationyml)
+ - [Resources](#Resources)
+ - [Tests](#Tests)
 
 #### [Database](#database)
  - [Schemas](#schemas)
@@ -23,33 +26,33 @@
 4. [GET: Person Search](#person-search)
 5. [GET: Person Get By Person Id](#person-get-by-person-id)
 
-## Application Settings
+## Application
 
-Spring Boot can has a large number of settings that can be set with a file called `application.yml`. \
-This file is already provided for you and is placed here for reference.
+### application.yml
 
-##### `application.yml`
+Spring Boot can has a large number of settings that can be set with a file called `application.yml`.
 
-```yml
-spring:
-  application:
-    name: MoviesService
-  datasource:
-    url: jdbc:mysql://localhost:3306
-    username: ${DB_USERNAME}
-    password: ${DB_PASSWORD}
+**These file should NEVER be modified**
 
-server:
-  address: 0.0.0.0
-  port: 8082
-  error: # These settings are for debugging
-    include-exception: true
-    include-message: always
+ 1. [Main application.yml](/src/main/resources/application.yml)
+ 2. [Test application.yml](/src/test/resources/application.yml)
 
-logging:
-  file:
-    name: ./MoviesService.log
-``` 
+### Resources
+
+There are two folders in this project that contain resources, and application settings
+
+**These file should NEVER be modified**
+
+ 1. [Main Resources](/src/main/resources)
+ 2. [Test Resources](/src/test/resources)
+
+### Tests
+
+There is a Single class that containt all of our test cases: 
+
+**This file should NEVER be modified**
+
+ 1. [MoviesServiceTest](/src/test/java/com/github/klefstad_teaching/cs122b/idm/MoviesServiceTest.java)
 
 ## Database
 
