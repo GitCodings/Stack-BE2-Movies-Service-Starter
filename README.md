@@ -353,9 +353,9 @@ All `Result` objects are available as static constants inside of the `com.github
 These can be used rather than creating your own.
 
 ### SignedJWT
-All endpoints in this service are considered 'privilged' as in, the user calling the endpoint must be authorized and as such must included their serialized `SignedJWT` inlcuded in the header of the request under the `Authorization` header.
+All endpoints in this service are considered 'privilged' as in, the user calling the endpoint must be authorized and as such must included their serialized `SignedJWT` inlcuded in the header of the request under the `Authorization` header. In the test cases you'll see that we are including these headers with JWT's for your convenience when testing.
 
-In Spring there is a way to automatically take this header and turn it into a `SignedJWT` (This is already done for you by a provided filter here: [JWTAuthenticationFilter](https://github.com/klefstad-teaching/CS122B-Core/blob/main/src/main/java/com/github/klefstad_teaching/cs122b/core/security/JWTAuthenticationFilter.java)). There is also a way to "ask" spring for this `SignedJWT` by using the `@AuthenticationPrincipal` annotation on a `SignedJWT` function parameter in the endpoint like so:
+In Spring there is a way to automatically take this header and turn it into a `SignedJWT` (This is already done for you by a provided filter here: [JWTAuthenticationFilter](https://github.com/klefstad-teaching/CS122B-Core/blob/main/src/main/java/com/github/klefstad_teaching/cs122b/core/security/JWTAuthenticationFilter.java)). There is also a way to "ask" spring for this `SignedJWT` by using the `@AuthenticationPrincipal SignedJWT user` function parameter in the endpoint like so:
 
 ```java
 @GetMapping("/path")
@@ -363,11 +363,6 @@ public ResponseEntity<ResponseModel> endpoint(@AuthenticationPrincipal SignedJWT
 {
     ...
 }
-```
-
-There is a filter that came with our custom library that automatically takes the Serialized JWT found in the `Authorization` header, turns it into an instance of `SignedJWT` and allows you to "ask" for it in the function arguments by using the `@AuthenticationPrincipal SignedJWT user` parameter.
-
-In the test cases you'll see that we are including these headers with JWT's for your convenience when testing.
 ```
 
 ### Person VS Director
