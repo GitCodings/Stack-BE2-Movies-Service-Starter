@@ -52,7 +52,7 @@ There is a Single class that containt all of our test cases:
 
 **This file should NEVER be modified**
 
- 1. [MoviesServiceTest](/src/test/java/com/github/klefstad_teaching/cs122b/idm/MoviesServiceTest.java)
+ 1. [MoviesServiceTest](/src/test/java/com/github/klefstad_teaching/cs122b/movies/MoviesServiceTest.java)
 
 ## Database
 
