@@ -8,9 +8,6 @@
 		{
 			"name": "Movie By ID",
 			"request": {
-				"auth": {
-					"type": "noauth"
-				},
 				"method": "GET",
 				"header": [],
 				"url": {
@@ -91,12 +88,12 @@
 			"response": []
 		},
 		{
-			"name": "Movie Search by Person",
+			"name": "Movie Search by Person ID",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8082/movie/search/person/Robert Downey Jr.",
+					"raw": "http://localhost:8082/movie/search/person/",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -106,44 +103,7 @@
 						"movie",
 						"search",
 						"person",
-						"Robert Downey Jr."
-					],
-					"query": [
-						{
-							"key": "name",
-							"value": null,
-							"disabled": true
-						},
-						{
-							"key": "birthdate",
-							"value": null,
-							"disabled": true
-						},
-						{
-							"key": "movieTitle",
-							"value": null,
-							"disabled": true
-						},
-						{
-							"key": "limit",
-							"value": null,
-							"disabled": true
-						},
-						{
-							"key": "page",
-							"value": null,
-							"disabled": true
-						},
-						{
-							"key": "orderBy",
-							"value": null,
-							"disabled": true
-						},
-						{
-							"key": "direction",
-							"value": null,
-							"disabled": true
-						}
+						""
 					]
 				}
 			},

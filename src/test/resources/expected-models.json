@@ -435,6 +435,130 @@
       }
     ]
   },
+  "movieByIdPageMaster": {
+    "movie": {
+      "id": 110763,
+      "title": "The Pagemaster",
+      "year": 1994,
+      "director": "Maurice Hunt",
+      "rating": 6.0,
+      "backdropPath": "/eCycNSli1RGn5YBCB6qTjP3eShp.jpg",
+      "posterPath": "/ikfLM0qpyBtMJG0H9JwIxZC1egG.jpg",
+      "hidden": true,
+      "numVotes": 370,
+      "budget": 27000000,
+      "revenue": 13670688,
+      "overview": "Tyler knows a lot about accidents. So much so, he is scared to do anything that might endanger him, like riding his bike, or climbing into his treehouse. While in an old library, he is mystically transported into the unknown world of books, and he has to try and get home again. Along the way he meets some interesting characters, like Fantasy, Adventure, and Horror... Written by Colin Tinto"
+    },
+    "genres": [
+      {
+        "id": 16,
+        "name": "Animation"
+      },
+      {
+        "id": 10751,
+        "name": "Family"
+      },
+      {
+        "id": 14,
+        "name": "Fantasy"
+      },
+      {
+        "id": 878,
+        "name": "Science Fiction"
+      }
+    ],
+    "persons": [
+      {
+        "id": 2387,
+        "name": "Patrick Stewart"
+      },
+      {
+        "id": 2395,
+        "name": "Whoopi Goldberg"
+      },
+      {
+        "id": 1062,
+        "name": "Christopher Lloyd"
+      },
+      {
+        "id": 11510,
+        "name": "Macaulay Culkin"
+      },
+      {
+        "id": 15831,
+        "name": "Frank Welker"
+      },
+      {
+        "id": 1749,
+        "name": "Leonard Nimoy"
+      },
+      {
+        "id": 12077,
+        "name": "Jim Cummings"
+      },
+      {
+        "id": 42157,
+        "name": "Ed Begley Jr."
+      },
+      {
+        "id": 8656,
+        "name": "Dorian Harewood"
+      },
+      {
+        "id": 25306,
+        "name": "Mel Harris"
+      },
+      {
+        "id": 9110,
+        "name": "Richard Erdman"
+      },
+      {
+        "id": 14104,
+        "name": "Phil Hartman"
+      },
+      {
+        "id": 16180,
+        "name": "Robert Picardo"
+      },
+      {
+        "id": 35243,
+        "name": "Ed Gilbert"
+      },
+      {
+        "id": 38337,
+        "name": "George Hearn"
+      },
+      {
+        "id": 88622,
+        "name": "B. J. Ward"
+      },
+      {
+        "id": 176463,
+        "name": "Fernando Escandon"
+      },
+      {
+        "id": 947355,
+        "name": "Canan J. Howell"
+      },
+      {
+        "id": 947356,
+        "name": "Alexis Kirschner"
+      },
+      {
+        "id": 951963,
+        "name": "Jessica Kirschner"
+      },
+      {
+        "id": 1077936,
+        "name": "Guy Mansker"
+      },
+      {
+        "id": 1077937,
+        "name": "Brandon S. McKay"
+      }
+    ]
+  },
   "moviesSearchFullDefault": [
     {
       "id": 78718,
@@ -1583,6 +1707,182 @@
       "hidden": false
     }
   ],
+  "moviesSearchAdminCanSeeHidden": [
+    {
+      "id": 1797469,
+      "title": "Page Eight",
+      "year": 2011,
+      "director": "David Hare",
+      "rating": 7.0,
+      "backdropPath": "/8PlhVSdMyriOKdFDEgyiay5M9xe.jpg",
+      "posterPath": "/4WdJmlY03tktC7B6UM8sHxPfPcw.jpg",
+      "hidden": false
+    },
+    {
+      "id": 1787777,
+      "title": "Page One: Inside the New York Times",
+      "year": 2011,
+      "director": "Andrew Rossi",
+      "rating": 7.0,
+      "backdropPath": "/tfnJAQMHkunBYKcJwGkagIqyjOC.jpg",
+      "posterPath": "/jDIwrjDaVvZMtgfOjgpAOaenz5D.jpg",
+      "hidden": false
+    },
+    {
+      "id": 3448226,
+      "title": "Rampage: Capital Punishment",
+      "year": 2014,
+      "director": "Uwe Boll",
+      "rating": 6.0,
+      "backdropPath": "/mvfXbtJJwtuy0YzbnMhShE2dikR.jpg",
+      "posterPath": "/tQuaZZWsHYNZROzJZjEH6LLHSWW.jpg",
+      "hidden": false
+    },
+    {
+      "id": 4146622,
+      "title": "Rampage: President Down",
+      "year": 2016,
+      "director": "Uwe Boll",
+      "rating": 5.0,
+      "backdropPath": "/zRbVu2wAWy46H85TxayTBPKB2AR.jpg",
+      "posterPath": "/vSw97KTyxUQWCyGvnrc7t73L15l.jpg",
+      "hidden": false
+    },
+    {
+      "id": 404802,
+      "title": "The Notorious Bettie Page",
+      "year": 2005,
+      "director": "Mary Harron",
+      "rating": 6.0,
+      "backdropPath": "/kdkgMrPmWLJqRQW3jja5nBIzc6M.jpg",
+      "posterPath": "/sFVJzD30tr0MNENwhgEhjaGN0IO.jpg",
+      "hidden": false
+    },
+    {
+      "id": 110763,
+      "title": "The Pagemaster",
+      "year": 1994,
+      "director": "Maurice Hunt",
+      "rating": 6.0,
+      "backdropPath": "/eCycNSli1RGn5YBCB6qTjP3eShp.jpg",
+      "posterPath": "/ikfLM0qpyBtMJG0H9JwIxZC1egG.jpg",
+      "hidden": true
+    }
+  ],
+  "moviesSearchEmployeeCanSeeHidden": [
+    {
+      "id": 1797469,
+      "title": "Page Eight",
+      "year": 2011,
+      "director": "David Hare",
+      "rating": 7.0,
+      "backdropPath": "/8PlhVSdMyriOKdFDEgyiay5M9xe.jpg",
+      "posterPath": "/4WdJmlY03tktC7B6UM8sHxPfPcw.jpg",
+      "hidden": false
+    },
+    {
+      "id": 1787777,
+      "title": "Page One: Inside the New York Times",
+      "year": 2011,
+      "director": "Andrew Rossi",
+      "rating": 7.0,
+      "backdropPath": "/tfnJAQMHkunBYKcJwGkagIqyjOC.jpg",
+      "posterPath": "/jDIwrjDaVvZMtgfOjgpAOaenz5D.jpg",
+      "hidden": false
+    },
+    {
+      "id": 3448226,
+      "title": "Rampage: Capital Punishment",
+      "year": 2014,
+      "director": "Uwe Boll",
+      "rating": 6.0,
+      "backdropPath": "/mvfXbtJJwtuy0YzbnMhShE2dikR.jpg",
+      "posterPath": "/tQuaZZWsHYNZROzJZjEH6LLHSWW.jpg",
+      "hidden": false
+    },
+    {
+      "id": 4146622,
+      "title": "Rampage: President Down",
+      "year": 2016,
+      "director": "Uwe Boll",
+      "rating": 5.0,
+      "backdropPath": "/zRbVu2wAWy46H85TxayTBPKB2AR.jpg",
+      "posterPath": "/vSw97KTyxUQWCyGvnrc7t73L15l.jpg",
+      "hidden": false
+    },
+    {
+      "id": 404802,
+      "title": "The Notorious Bettie Page",
+      "year": 2005,
+      "director": "Mary Harron",
+      "rating": 6.0,
+      "backdropPath": "/kdkgMrPmWLJqRQW3jja5nBIzc6M.jpg",
+      "posterPath": "/sFVJzD30tr0MNENwhgEhjaGN0IO.jpg",
+      "hidden": false
+    },
+    {
+      "id": 110763,
+      "title": "The Pagemaster",
+      "year": 1994,
+      "director": "Maurice Hunt",
+      "rating": 6.0,
+      "backdropPath": "/eCycNSli1RGn5YBCB6qTjP3eShp.jpg",
+      "posterPath": "/ikfLM0qpyBtMJG0H9JwIxZC1egG.jpg",
+      "hidden": true
+    }
+  ],
+  "moviesSearchPremiumCanNotSeeHidden": [
+    {
+      "id": 1797469,
+      "title": "Page Eight",
+      "year": 2011,
+      "director": "David Hare",
+      "rating": 7.0,
+      "backdropPath": "/8PlhVSdMyriOKdFDEgyiay5M9xe.jpg",
+      "posterPath": "/4WdJmlY03tktC7B6UM8sHxPfPcw.jpg",
+      "hidden": false
+    },
+    {
+      "id": 1787777,
+      "title": "Page One: Inside the New York Times",
+      "year": 2011,
+      "director": "Andrew Rossi",
+      "rating": 7.0,
+      "backdropPath": "/tfnJAQMHkunBYKcJwGkagIqyjOC.jpg",
+      "posterPath": "/jDIwrjDaVvZMtgfOjgpAOaenz5D.jpg",
+      "hidden": false
+    },
+    {
+      "id": 3448226,
+      "title": "Rampage: Capital Punishment",
+      "year": 2014,
+      "director": "Uwe Boll",
+      "rating": 6.0,
+      "backdropPath": "/mvfXbtJJwtuy0YzbnMhShE2dikR.jpg",
+      "posterPath": "/tQuaZZWsHYNZROzJZjEH6LLHSWW.jpg",
+      "hidden": false
+    },
+    {
+      "id": 4146622,
+      "title": "Rampage: President Down",
+      "year": 2016,
+      "director": "Uwe Boll",
+      "rating": 5.0,
+      "backdropPath": "/zRbVu2wAWy46H85TxayTBPKB2AR.jpg",
+      "posterPath": "/vSw97KTyxUQWCyGvnrc7t73L15l.jpg",
+      "hidden": false
+    },
+    {
+      "id": 404802,
+      "title": "The Notorious Bettie Page",
+      "year": 2005,
+      "director": "Mary Harron",
+      "rating": 6.0,
+      "backdropPath": "/kdkgMrPmWLJqRQW3jja5nBIzc6M.jpg",
+      "posterPath": "/sFVJzD30tr0MNENwhgEhjaGN0IO.jpg",
+      "hidden": false
+    }
+  ],
   "moviesSearchPerson": [
     {
       "id": 473488,
@@ -1988,6 +2288,152 @@
       "rating": 7.0,
       "backdropPath": "/11QHzPsn17ZHeZfC3pARD4Hu6ke.jpg",
       "posterPath": "/xCirDLSaQwuPhKyQ2kP9AGLidQ0.jpg",
+      "hidden": false
+    }
+  ],
+  "moviesSearchPersonAdminCanSeeHidden": [
+    {
+      "id": 106364,
+      "title": "Batman: Mask of the Phantasm",
+      "year": 1993,
+      "director": "Eric Radomski",
+      "rating": 8.0,
+      "backdropPath": "/jTwt4fcYADv758PVP6DH8ryy4R.jpg",
+      "posterPath": "/l4jaQjkgznu2Rz05X18f24UjPNW.jpg",
+      "hidden": false
+    },
+    {
+      "id": 166792,
+      "title": "Scooby-Doo on Zombie Island",
+      "year": 1998,
+      "director": "Jim Stenstrum",
+      "rating": 7.0,
+      "backdropPath": "/eiScwPH45KB0oqPqNCmVBdIfwYI.jpg",
+      "posterPath": "/j1Pl3ztuweSQ3pReunO3WM7boju.jpg",
+      "hidden": false
+    },
+    {
+      "id": 110763,
+      "title": "The Pagemaster",
+      "year": 1994,
+      "director": "Maurice Hunt",
+      "rating": 6.0,
+      "backdropPath": "/eCycNSli1RGn5YBCB6qTjP3eShp.jpg",
+      "posterPath": "/ikfLM0qpyBtMJG0H9JwIxZC1egG.jpg",
+      "hidden": true
+    },
+    {
+      "id": 100477,
+      "title": "The Rescuers Down Under",
+      "year": 1990,
+      "director": "Mike Gabriel",
+      "rating": 7.0,
+      "backdropPath": "/jCbLi7MXY7mO22WO6dVta2fCPmV.jpg",
+      "posterPath": "/mpIIgBqdthvx2oVwiCFHZhOUOuv.jpg",
+      "hidden": false
+    },
+    {
+      "id": 92106,
+      "title": "The Transformers: The Movie",
+      "year": 1986,
+      "director": "Nelson Shin",
+      "rating": 7.0,
+      "backdropPath": "/1eYXN4MH8WZFFSgg70g6cdUpSeO.jpg",
+      "posterPath": "/j4HTorvJdGOuIgGyE56fMCLmcCg.jpg",
+      "hidden": false
+    }
+  ],
+  "moviesSearchPersonEmployeeCanSeeHidden": [
+    {
+      "id": 106364,
+      "title": "Batman: Mask of the Phantasm",
+      "year": 1993,
+      "director": "Eric Radomski",
+      "rating": 8.0,
+      "backdropPath": "/jTwt4fcYADv758PVP6DH8ryy4R.jpg",
+      "posterPath": "/l4jaQjkgznu2Rz05X18f24UjPNW.jpg",
+      "hidden": false
+    },
+    {
+      "id": 166792,
+      "title": "Scooby-Doo on Zombie Island",
+      "year": 1998,
+      "director": "Jim Stenstrum",
+      "rating": 7.0,
+      "backdropPath": "/eiScwPH45KB0oqPqNCmVBdIfwYI.jpg",
+      "posterPath": "/j1Pl3ztuweSQ3pReunO3WM7boju.jpg",
+      "hidden": false
+    },
+    {
+      "id": 110763,
+      "title": "The Pagemaster",
+      "year": 1994,
+      "director": "Maurice Hunt",
+      "rating": 6.0,
+      "backdropPath": "/eCycNSli1RGn5YBCB6qTjP3eShp.jpg",
+      "posterPath": "/ikfLM0qpyBtMJG0H9JwIxZC1egG.jpg",
+      "hidden": true
+    },
+    {
+      "id": 100477,
+      "title": "The Rescuers Down Under",
+      "year": 1990,
+      "director": "Mike Gabriel",
+      "rating": 7.0,
+      "backdropPath": "/jCbLi7MXY7mO22WO6dVta2fCPmV.jpg",
+      "posterPath": "/mpIIgBqdthvx2oVwiCFHZhOUOuv.jpg",
+      "hidden": false
+    },
+    {
+      "id": 92106,
+      "title": "The Transformers: The Movie",
+      "year": 1986,
+      "director": "Nelson Shin",
+      "rating": 7.0,
+      "backdropPath": "/1eYXN4MH8WZFFSgg70g6cdUpSeO.jpg",
+      "posterPath": "/j4HTorvJdGOuIgGyE56fMCLmcCg.jpg",
+      "hidden": false
+    }
+  ],
+  "moviesSearchPersonPremiumCanNotSeeHidden": [
+    {
+      "id": 106364,
+      "title": "Batman: Mask of the Phantasm",
+      "year": 1993,
+      "director": "Eric Radomski",
+      "rating": 8.0,
+      "backdropPath": "/jTwt4fcYADv758PVP6DH8ryy4R.jpg",
+      "posterPath": "/l4jaQjkgznu2Rz05X18f24UjPNW.jpg",
+      "hidden": false
+    },
+    {
+      "id": 166792,
+      "title": "Scooby-Doo on Zombie Island",
+      "year": 1998,
+      "director": "Jim Stenstrum",
+      "rating": 7.0,
+      "backdropPath": "/eiScwPH45KB0oqPqNCmVBdIfwYI.jpg",
+      "posterPath": "/j1Pl3ztuweSQ3pReunO3WM7boju.jpg",
+      "hidden": false
+    },
+    {
+      "id": 100477,
+      "title": "The Rescuers Down Under",
+      "year": 1990,
+      "director": "Mike Gabriel",
+      "rating": 7.0,
+      "backdropPath": "/jCbLi7MXY7mO22WO6dVta2fCPmV.jpg",
+      "posterPath": "/mpIIgBqdthvx2oVwiCFHZhOUOuv.jpg",
+      "hidden": false
+    },
+    {
+      "id": 92106,
+      "title": "The Transformers: The Movie",
+      "year": 1986,
+      "director": "Nelson Shin",
+      "rating": 7.0,
+      "backdropPath": "/1eYXN4MH8WZFFSgg70g6cdUpSeO.jpg",
+      "posterPath": "/j4HTorvJdGOuIgGyE56fMCLmcCg.jpg",
       "hidden": false
     }
   ],
