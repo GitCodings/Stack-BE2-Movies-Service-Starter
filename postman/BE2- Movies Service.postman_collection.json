@@ -104,6 +104,28 @@
 						"search",
 						"person",
 						""
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "page",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "orderBy",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "direction",
+							"value": null,
+							"disabled": true
+						}
 					]
 				}
 			},
