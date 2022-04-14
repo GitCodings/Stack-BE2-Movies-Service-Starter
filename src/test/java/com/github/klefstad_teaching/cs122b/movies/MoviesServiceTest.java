@@ -51,6 +51,9 @@ public class MoviesServiceTest
     private static final String MOVIE_TITLE_QUERY = "movieTitle";
 
     private static final long ROBERT_DOWNEY_JR_ID = 3223;
+    private static final long PAGE_MASTER_ACTOR_ID = 35243;
+
+    private static final long PAGE_MASTER_ID = 110763;
     private static final long AVENGERS_ENDGAME_ID = 4154796;
 
     private static final long NOT_A_REAL_MOVIE_ID  = Integer.MAX_VALUE;
@@ -335,6 +338,45 @@ public class MoviesServiceTest
                     .andExpect(jsonPath("movies").doesNotHaveJsonPath());
     }
 
+    @Test
+    public void moviesSearchAdminCanSeeHidden()
+        throws Exception
+    {
+        this.mockMvc.perform(get(MOVIE_SEARCH_PATH)
+                                 .contentType(MediaType.APPLICATION_JSON)
+                                 .queryParam("title", "page")
+                                 .header(HttpHeaders.AUTHORIZATION, adminHeader))
+                    .andDo(print())
+                    .andExpectAll(isResult(MoviesResults.MOVIES_FOUND_WITHIN_SEARCH))
+                    .andExpect(jsonPath("movies").value(getModel("moviesSearchAdminCanSeeHidden")));
+    }
+
+    @Test
+    public void moviesSearchEmployeeCanSeeHidden()
+        throws Exception
+    {
+        this.mockMvc.perform(get(MOVIE_SEARCH_PATH)
+                                 .contentType(MediaType.APPLICATION_JSON)
+                                 .queryParam("title", "page")
+                                 .header(HttpHeaders.AUTHORIZATION, employeeHeader))
+                    .andDo(print())
+                    .andExpectAll(isResult(MoviesResults.MOVIES_FOUND_WITHIN_SEARCH))
+                    .andExpect(jsonPath("movies").value(getModel("moviesSearchEmployeeCanSeeHidden")));
+    }
+
+    @Test
+    public void moviesSearchPremiumCanNotSeeHidden()
+        throws Exception
+    {
+        this.mockMvc.perform(get(MOVIE_SEARCH_PATH)
+                                 .contentType(MediaType.APPLICATION_JSON)
+                                 .queryParam("title", "page")
+                                 .header(HttpHeaders.AUTHORIZATION, premiumHeader))
+                    .andDo(print())
+                    .andExpectAll(isResult(MoviesResults.MOVIES_FOUND_WITHIN_SEARCH))
+                    .andExpect(jsonPath("movies").value(getModel("moviesSearchPremiumCanNotSeeHidden")));
+    }
+
     // Movie Search Person Tests
 
     @Test
@@ -454,6 +496,42 @@ public class MoviesServiceTest
                     .andExpect(jsonPath("movies").doesNotHaveJsonPath());
     }
 
+    @Test
+    public void moviesSearchPersonAdminCanSeeHidden()
+        throws Exception
+    {
+        this.mockMvc.perform(get(MOVIE_SEARCH_BY_PERSON_PATH, PAGE_MASTER_ACTOR_ID)
+                                 .contentType(MediaType.APPLICATION_JSON)
+                                 .header(HttpHeaders.AUTHORIZATION, adminHeader))
+                    .andDo(print())
+                    .andExpectAll(isResult(MoviesResults.MOVIES_WITH_PERSON_ID_FOUND))
+                    .andExpect(jsonPath("movies").value(getModel("moviesSearchPersonAdminCanSeeHidden")));
+    }
+
+    @Test
+    public void moviesSearchPersonEmployeeCanSeeHidden()
+        throws Exception
+    {
+        this.mockMvc.perform(get(MOVIE_SEARCH_BY_PERSON_PATH, PAGE_MASTER_ACTOR_ID)
+                                 .contentType(MediaType.APPLICATION_JSON)
+                                 .header(HttpHeaders.AUTHORIZATION, employeeHeader))
+                    .andDo(print())
+                    .andExpectAll(isResult(MoviesResults.MOVIES_WITH_PERSON_ID_FOUND))
+                    .andExpect(jsonPath("movies").value(getModel("moviesSearchPersonEmployeeCanSeeHidden")));
+    }
+
+    @Test
+    public void moviesSearchPersonPremiumCanNotSeeHidden()
+        throws Exception
+    {
+        this.mockMvc.perform(get(MOVIE_SEARCH_BY_PERSON_PATH, PAGE_MASTER_ACTOR_ID)
+                                 .contentType(MediaType.APPLICATION_JSON)
+                                 .header(HttpHeaders.AUTHORIZATION, premiumHeader))
+                    .andDo(print())
+                    .andExpectAll(isResult(MoviesResults.MOVIES_WITH_PERSON_ID_FOUND))
+                    .andExpect(jsonPath("movies").value(getModel("moviesSearchPersonPremiumCanNotSeeHidden")));
+    }
+
     // Movie By ID Tests
 
     @Test
@@ -477,6 +555,50 @@ public class MoviesServiceTest
         this.mockMvc.perform(get(MOVIE_BY_ID_PATH, NOT_A_REAL_MOVIE_ID)
                                  .contentType(MediaType.APPLICATION_JSON)
                                  .header(HttpHeaders.AUTHORIZATION, adminHeader))
+                    .andDo(print())
+                    .andExpectAll(isResult(MoviesResults.NO_MOVIE_WITH_ID_FOUND))
+                    .andExpect(jsonPath("movie").doesNotHaveJsonPath())
+                    .andExpect(jsonPath("genres").doesNotHaveJsonPath())
+                    .andExpect(jsonPath("persons").doesNotHaveJsonPath());
+    }
+
+
+
+    @Test
+    public void moviesByIdAdminCanSeeHidden()
+        throws Exception
+    {
+        this.mockMvc.perform(get(MOVIE_BY_ID_PATH, PAGE_MASTER_ID)
+                                 .contentType(MediaType.APPLICATION_JSON)
+                                 .header(HttpHeaders.AUTHORIZATION, adminHeader))
+                    .andDo(print())
+                    .andExpectAll(isResult(MoviesResults.MOVIE_WITH_ID_FOUND))
+                    .andExpect(jsonPath("movie").value(getModel("movieByIdPageMaster.movie")))
+                    .andExpect(jsonPath("genres").value(getModel("movieByIdPageMaster.genres")))
+                    .andExpect(jsonPath("persons").value(getModel("movieByIdPageMaster.persons")));
+    }
+
+    @Test
+    public void moviesByIdEmployeeCanSeeHidden()
+        throws Exception
+    {
+        this.mockMvc.perform(get(MOVIE_BY_ID_PATH, PAGE_MASTER_ID)
+                                 .contentType(MediaType.APPLICATION_JSON)
+                                 .header(HttpHeaders.AUTHORIZATION, employeeHeader))
+                    .andDo(print())
+                    .andExpectAll(isResult(MoviesResults.MOVIE_WITH_ID_FOUND))
+                    .andExpect(jsonPath("movie").value(getModel("movieByIdPageMaster.movie")))
+                    .andExpect(jsonPath("genres").value(getModel("movieByIdPageMaster.genres")))
+                    .andExpect(jsonPath("persons").value(getModel("movieByIdPageMaster.persons")));
+    }
+
+    @Test
+    public void moviesByIdPremiumCanNotSeeHidden()
+        throws Exception
+    {
+        this.mockMvc.perform(get(MOVIE_BY_ID_PATH, PAGE_MASTER_ID)
+                                 .contentType(MediaType.APPLICATION_JSON)
+                                 .header(HttpHeaders.AUTHORIZATION, premiumHeader))
                     .andDo(print())
                     .andExpectAll(isResult(MoviesResults.NO_MOVIE_WITH_ID_FOUND))
                     .andExpect(jsonPath("movie").doesNotHaveJsonPath())
