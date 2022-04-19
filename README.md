@@ -379,7 +379,13 @@ We set our userId using `.claim(JWTManager.CLAIM_ID, userId)` we can get that id
 A convient function to use to get our roles our of our `SignedJWT` is  `.getStringListClaim(JWTManager.CLAIM_ROLES)` which returns our user's roles as a list of `String`s
 
 ### Person VS Director
-- Our database schema has a `movie_person` table that has the list of `person` in a `movie` **NOTE** that this list does **NOT** contain the director, the director is only associated with a movie by the `director_id` column. Every movie is guaranteed to have a director **BUT** not every movie has `person` associated with them.
+- Our database schema has a `movie_person` table that has the list of `person` in a `movie`. Not every movie is guaranteed to have a `person` in it. (there could be no `movie_person` assoications for a certain movie.
+- However every movie is guaranteed to have a director To get the director of a movie you must join the `movie` and `person` table like this:
+```sql
+SELECT m.title, ... , p.name
+FROM movies m
+    JOIN person p ON p.id = m.director_id
+```
 - For the endpoint [GET: Movie Search By Person Id](#movie-search-by-person-id) do not account for director values, search only for `persons` in `movie_person`. This should prevent the SQL Queries from becoming too complex.
  
 ### Substring Search
