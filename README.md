@@ -390,7 +390,7 @@ FROM movies m
  
 ### Substring Search
  
-For queries marked as (Search by [substring](#substring-search)) make sure to have the value surrounded by '%' to allow for search by sub-string. Refer to this section in the activity: [Wildcard String Matching](https://github.com/klefstad-teaching/CS122B-A4-SQL/blob/main/README.md#wildcard-string-matching)
+For queries marked as (Search by [substring](#substring-search)) make sure to have the value surrounded by '%' **on both sides** (`%value%`)to allow for search by sub-string. Refer to this section in the activity: [Wildcard String Matching](https://github.com/klefstad-teaching/CS122B-A4-SQL/blob/main/README.md#wildcard-string-matching)
  
 # Endpoints
 
@@ -407,7 +407,7 @@ Each movie in the <code>movies.movie</code> table has a <code>hidden</code> fiel
 For the following string search parameters (<code>title</code>, <code>director</code>, <code>genre</code>), you should use the <code>LIKE</code> operator with the <code>%</code> wildcard on both sides of the value. For example, if a value of 'knight' was given as the <code>title</code> search parameter, then the sql command should look like this: <code>title LIKE '%knight%'</code>
 
 ### Pagination
-We simulate **Pagination** in our search quries having a `page` and `limit` query and using these two pararmeters to set our `OFFSET` and `LIMIT` in our SQL query.
+We simulate **Pagination** in our search queries having a `page` and `limit` query and using these two parameters to set our `OFFSET` and `LIMIT` in our SQL query.
 
 1. We set our SQL `LIMIT` to whatever our query `limit` is (or the default)
 2. We set our SQL `OFFSET` to ((`page` - 1) * `limit`). This gives us the amount of movies to skip.
