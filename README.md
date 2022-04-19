@@ -378,8 +378,8 @@ We set our userId using `.claim(JWTManager.CLAIM_ID, userId)` we can get that id
 
 A convient function to use to get our roles our of our `SignedJWT` is  `.getStringListClaim(JWTManager.CLAIM_ROLES)` which returns our user's roles as a list of `String`s
 
-### Person VS Director
-- Our database schema has a `movie_person` table that has the list of `person` in a `movie`. Not every movie is guaranteed to have a `person` in it. (there could be no `movie_person` assoications for a certain movie.
+### Person and Director
+- Our database schema has a `movie_person` table that has the list of `person` in a `movie`. Not every movie is guaranteed to have a `person` in it. (There could be no `movie_person` assoications for a certain movie).
 - However every movie is guaranteed to have a director To get the director of a movie you must join the `movie` and `person` table like this:
 ```sql
 SELECT m.title, ... , p.name
