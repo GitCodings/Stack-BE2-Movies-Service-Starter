@@ -889,10 +889,10 @@ movies: MovieDetail
     posterPath: String
     hidden: Boolean
 genres: Genre[] 
-    genreId: Integer
+    genreId: Long
     name: String
 persons: Person[] 
-    personId: Integer
+    personId: Long
     name: String</pre></td>
       <td align="left"><pre lang="json">
 {
@@ -1059,7 +1059,7 @@ GET /person/search
 result: Result
     code: Integer
     message: String
-persons: id
+persons: Person[]
     personId: Long
     name: String
     birthday: String (nullable)
