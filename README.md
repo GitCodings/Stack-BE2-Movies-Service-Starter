@@ -16,7 +16,7 @@
  - [JsonInclude](#jsoninclude)
  - [Result](#result)
  - [SignedJWT](#signedjwt)
- - [Person VS Director](#person-vs-director)
+ - [Person and Director](#person-and-director)
  - [Substring Search](#substring-search)
  - [Pagination](#pagination)
 
@@ -1259,3 +1259,11 @@ person: PersonDetail
     </tr>
   </tbody>
 </table>
+
+
+#### TMDB
+
+All the data for the database is sourced from TMDb: [The Movie Database](https://www.themoviedb.org/)
+
+<img src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_square_1-5bdc75aaebeb75dc7ae79426ddd9be3b2be1e342510f8202baf6bffa71d7f5c4.svg" alt="The Movie Database" width="200"/>
+
