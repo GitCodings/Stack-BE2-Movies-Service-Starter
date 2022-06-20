@@ -1,4 +1,4 @@
-package com.github.klefstad_teaching.cs122b.movies.util;
+package com.gitcodings.stack.movies.util;
 
 import org.springframework.stereotype.Component;
 

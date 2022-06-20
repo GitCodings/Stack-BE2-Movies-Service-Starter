@@ -1,4 +1,4 @@
-# CS122B Backend 2 - The Movies Service
+# Stack Backend 2 - The Movies Service
 
 #### [Application](#application)
  - [pom.xml](#pomxml)
@@ -56,7 +56,7 @@ There are two folders in this project that contain resources, and application se
 
 There is a Single class that contain all of our test cases: 
 
- - [MoviesServiceTest](/src/test/java/com/github/klefstad_teaching/cs122b/movies/MoviesServiceTest.java)
+ - [MoviesServiceTest](/src/test/java/com/gitcodings/stack/movies/MoviesServiceTest.java)
 
 ## Database
 
@@ -356,13 +356,13 @@ This is done by insuring that all `null` values are dropped by either:
 - Putting the `@JsonInclude(JsonInclude.Include.NON_NULL)` on your Model class
   
 ### Result
-All `Result` objects are available as static constants inside of the `com.github.klefstad_teaching.cs122b.core.result.MoviesResults` class.
+All `Result` objects are available as static constants inside of the `com.gitcodings.stack.core.result.MoviesResults` class.
 These can be used rather than creating your own.
 
 ### SignedJWT
 All endpoints in this service are considered 'privilged' as in, the user calling the endpoint must be authorized and as such must included their serialized `SignedJWT` inlcuded in the header of the request under the `Authorization` header. In the test cases you'll see that we are including these headers with JWT's for your convenience when testing.
 
-In Spring there is a way to automatically take this header and turn it into a `SignedJWT` (This is already done for you by a provided filter here: [JWTAuthenticationFilter](https://github.com/klefstad-teaching/CS122B-Core/blob/main/src/main/java/com/github/klefstad_teaching/cs122b/core/security/JWTAuthenticationFilter.java)). There is also a way to "ask" spring for this `SignedJWT` by using the `@AuthenticationPrincipal SignedJWT user` function parameter in the endpoint like so:
+In Spring there is a way to automatically take this header and turn it into a `SignedJWT` (This is already done for you by a provided filter here: [JWTAuthenticationFilter](https://github.com/GitCodings/Stack/stack-core/src/main/java/com/gitcodings/stack/core/security/JWTAuthenticationFilter.java)). There is also a way to "ask" spring for this `SignedJWT` by using the `@AuthenticationPrincipal SignedJWT user` function parameter in the endpoint like so:
 
 ```java
 @GetMapping("/path")
@@ -390,7 +390,7 @@ FROM movies m
  
 ### Substring Search
  
-For queries marked as (Search by [substring](#substring-search)) make sure to have the value surrounded by '%' **on both sides** (`%value%`)to allow for search by sub-string. Refer to this section in the activity: [Wildcard String Matching](https://github.com/klefstad-teaching/CS122B-A4-SQL/blob/main/README.md#wildcard-string-matching)
+For queries marked as (Search by [substring](#substring-search)) make sure to have the value surrounded by '%' **on both sides** (`%value%`)to allow for search by sub-string. Refer to this section in the activity: [Wildcard String Matching](https://github.com/GitCodings/Stack-A4-SQL/blob/main/README.md#wildcard-string-matching)
  
 # Endpoints
 

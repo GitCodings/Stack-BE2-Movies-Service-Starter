@@ -1,7 +1,7 @@
-package com.github.klefstad_teaching.cs122b.movies.rest;
+package com.gitcodings.stack.movies.rest;
 
-import com.github.klefstad_teaching.cs122b.movies.repo.MovieRepo;
-import com.github.klefstad_teaching.cs122b.movies.util.Validate;
+import com.gitcodings.stack.movies.repo.MovieRepo;
+import com.gitcodings.stack.movies.util.Validate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 

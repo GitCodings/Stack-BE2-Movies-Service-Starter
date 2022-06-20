@@ -1,4 +1,4 @@
-package com.github.klefstad_teaching.cs122b.movies.repo;
+package com.gitcodings.stack.movies.repo;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
