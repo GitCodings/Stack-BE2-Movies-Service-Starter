@@ -19,10 +19,10 @@ jobs:
       - name: Checkout DB
         run: |
           wget https://raw.githubusercontent.com/GitCodings/Stack-Database/main/movies/movies_genre.sql -O db/movies_genre.sql;
-          wget https://raw.githubusercontent.com/GitCodings/Stack-Database/main/movies/movies_genre.sql -O db/movies_person.sql;
+          wget https://raw.githubusercontent.com/GitCodings/Stack-Database/main/movies/movies_person.sql -O db/movies_person.sql;
           wget https://raw.githubusercontent.com/GitCodings/Stack-Database/main/movies/movies_movie.sql -O db/movies_movie.sql;
-          wget https://raw.githubusercontent.com/GitCodings/Stack-Database/main/movies/movies_genre.sql -O db/movies_movie_genre.sql;
-          wget https://raw.githubusercontent.com/GitCodings/Stack-Database/main/movies/movies_genre.sql -O db/movies_movie_person.sql;
+          wget https://raw.githubusercontent.com/GitCodings/Stack-Database/main/movies/movies_movie_genre.sql -O db/movies_movie_genre.sql;
+          wget https://raw.githubusercontent.com/GitCodings/Stack-Database/main/movies/movies_movie_person.sql -O db/movies_movie_person.sql;
       - name: Set up JDK 11
         uses: actions/setup-java@v3
         with:
