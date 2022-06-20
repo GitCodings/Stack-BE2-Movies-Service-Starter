@@ -1,4 +1,4 @@
-package com.codingsprojects.stack.movies;
+package com.gitcodings.stack.movies;
 
 import com.gitcodings.stack.core.result.Result;
 import com.gitcodings.stack.core.result.MoviesResults;
